@@ -1,0 +1,23 @@
+# Template file for 'osip2'
+pkgname=osip2
+version=4.1.0
+revision=1
+wrksrc="lib${pkgname}-${version}"
+build_style=gnu-configure
+short_desc="The GNU oSIP library is an implementation of SIP"
+maintainer="Alain Carlucci <alain.carlucci@gmail.com>"
+license="LGPL-2"
+homepage="http://www.antisip.com"
+distfiles="${GNU_SITE}/osip/lib${pkgname}-${version}.tar.gz"
+checksum=996aa0363316a871915b6f12562af53853a9962bb93f6abe1ae69f8de7008504
+
+osip2-devel_package() {
+	depends="${sourcepkg}-${version}_${revision}"
+	short_desc+=" - development files"
+	pkg_install() {
+		vmove usr/include
+		vmove usr/lib/pkgconfig
+		vmove usr/lib/*.a
+		vmove usr/lib/*.la
+	}
+}

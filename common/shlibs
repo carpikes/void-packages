@@ -2415,3 +2415,4 @@ libvidstab.so.0.9 libvidstab-0.98b_1
 libxdo.so.3 xdotool-3.20150503.1_1 
 libosip2.so.11 osip2-4.1.0_1
 libosipparser2.so.11 osip2-4.1.0_1
+libeXosip2.so.11 eXosip2-4.1.0_1

@@ -1,0 +1,23 @@
+# Template file for 'eXosip2'
+pkgname=eXosip2
+version=4.1.0
+revision=1
+wrksrc="lib${pkgname}-${version}"
+makedepends="osip2-devel"
+build_style=gnu-configure
+short_desc="A library that hides the complexity of using the SIP protocol"
+maintainer="Alain Carlucci <alain.carlucci@gmail.com>"
+license="GPL-2"
+homepage="http://www.antisip.com"
+distfiles="${NONGNU_SITE}/exosip/lib${pkgname}-${version}.tar.gz"
+checksum=3c77713b783f239e3bdda0cc96816a544c41b2c96fa740a20ed322762752969d
+
+eXosip2-devel_package() {
+	depends="${sourcepkg}-${version}_${revision}"
+	short_desc+=" - development files"
+	pkg_install() {
+		vmove usr/include
+		vmove usr/lib/*.a
+		vmove usr/lib/*.la
+	}
+}
